@@ -27,7 +27,7 @@ from odoo import models, fields
 class HrPopupReminder(models.Model):
     _name = 'hr.reminder'
 
-    name = fields.Char(string='Title', required=True)
+    nameconvention = fields.Char(string='Title', required=True)
     model_name = fields.Many2one('ir.model', string="Model", required=True,  domain="[('model', 'like','hr')]")
     model_field = fields.Many2one('ir.model.fields', string='Field',
                                   domain="[('model_id', '=',model_name),('ttype', 'in', ['datetime','date'])]",
